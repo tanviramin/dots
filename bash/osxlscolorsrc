@@ -1,0 +1,12 @@
+# os x ls colors
+export CLICOLOR=1
+export GREP_OPTIONS='--color=auto'
+
+# for black console
+# export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# for white console
+#export LSCOLOR=ExFxCxDxBxegedabagacad
+# alternate coloring
+#export LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+

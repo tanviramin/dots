@@ -1,0 +1,47 @@
+# tanvir
+# custom bash
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+#setup alias
+if [ -f ~/.dotfiles/bash/aliasrc ];
+then
+  source ~/.dotfiles/bash/aliasrc
+fi
+
+# setup prompt
+if [ -f ~/.dotfiles/bash/promptrc ];
+then
+  source ~/.dotfiles/bash/promptrc
+fi
+
+# os name
+osname=`uname`
+# colors for Linux
+if [ $osname == "Linux" ];
+then
+  eval `dircolors ~/.dotfiles/bash/gnu-dircolors-solarized/dircolors.ansi-dark`
+
+  # gruvbox theme specific
+  gruvname="gruvbox_256palette.sh"
+
+elif [ $osname == "Darwin" ];
+then
+  #works if gnu coreutils installed
+  eval `dircolors ~/.dotfiles/bash/gnu-dircolors-solarized/dircolors.ansi-dark`
+  #eval `dircolors ~/.dotfiles/bash/gnu-dircolors-normal`
+  #source ~/.dotfiles/bash/osxlscolorsrc
+
+  # gruvbox theme specific
+  gruvname="gruvbox_256palette_osx.sh"
+fi
+
+# gruvbox theme specific
+if [ -d ~/.dotfiles/gruvbox-colors ];
+then
+  source ~/.dotfiles/vim/bundles/gruvbox/$gruvname
+fi
+

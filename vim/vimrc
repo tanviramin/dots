@@ -1,0 +1,166 @@
+
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+
+"
+" general
+"
+
+set nocompatible
+
+set tags=tags;/
+
+" searching
+set incsearch                 " incrimental search
+set hlsearch                  " highlighting when searching
+
+" this should get best indenting for most common filetypes
+filetype indent plugin on
+" note: cindent and smartindent do the wrong thing with e.g. indented lines
+" starting with # in certain files.
+" so i think autoindent is more minimal and good default for all filetypes.
+" again, most files will be covered by the previous line.
+set autoindent
+
+set backspace=2
+
+" display
+set nolist                    " show/hide tabs and EOL chars
+set nonumber                  " show/hide line numbers (nu/nonu)
+set scrolloff=5               " scroll offsett, min lines above/below cursor
+set scrolljump=5              " jump 5 lines when running out of the screen
+set sidescroll=10             " minumum columns to scroll horizontally
+set showcmd                   " show command status
+set showmatch                 " flashes matching paren when one is typed
+set showmode                  " show editing mode in status (-- INSERT --)
+set ruler                     " show cursor position
+
+" other
+set noerrorbells              " no bells in terminal
+set undolevels=1000           " number of undos stored
+set viminfo='50,"50           " '=marks for x files, "=registers for x files
+
+"
+" things you may be interested in for your .vimrc
+"
+" future colorscheme commands may clear all user-defined highlight groups.
+" Using the following command ensures that highlight group gets created.
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+
+" show a boundary on 80 character
+"doesnt work with vim 7.2
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
+endif
+
+" show errors on tabs
+" this does not work on os x for some reason
+if !has("macunix")
+  match error '\t'
+endif
+
+" highlight extra whitespace
+" highlight ExtraWhitespace ctermbg=white
+
+" highlight literal tabs
+" (but don't highlight trailing whitespace; it's annoying as you type)
+" actually even tabs are annoying since they are in e.g. git commit msgs
+" could make it just for php but i'm not sure it's even needed
+"match Error '\t'
+
+" make split windows easier to navigate
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
+"map <C-h> <C-w>h
+"map <C-l> <C-w>l
+"map <C-m> <C-w>_
+
+set nu
+syntax on
+
+"Solarized specific
+set background=dark
+let g:solarized_termcolors=16
+let g:solarized_italic=0
+let g:solarized_bold=1
+let g:solarized_underline=1
+
+"Gruvbox specific
+let g:gruvbox_invert_selection=0
+if !has("gui_running")
+  let g:gruvbox_italic=0
+endif
+
+"colorscheme solarized
+"colorscheme mustang
+"colorscheme vitamins
+colorscheme gruvbox
+"colorscheme railscasts
+
+set t_Co=256
+
+"always show the status line
+set laststatus=2
+set statusline=%<%F\ %h%m%r\ %=%{v:register}\ %-14.(%l,%c%V%)\ %P
+"statusline color
+hi StatusLine ctermfg=Yellow guifg=white
+set cursorline
+
+"hi CursorLine term=bold cterm=bold guibg=Grey40
+"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
+
+
+"use for vitamins
+hi CursorLine cterm=NONE term=NONE guibg=Grey40
+"hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
+
+
+" use \u to show underline under current line
+nnoremap <silent> <leader>u :hi CursorLine cterm=underline term=underline<CR>
+" use \t to show no underline under current line 
+nnoremap <silent> <leader>t :hi CursorLine cterm=NONE term=NONE guibg=Grey40<CR>
+
+" use \r to toggle cursor line
+nnoremap <silent> <leader>r :set cursorline!<CR>
+" use \c to toggle cursor column
+nnoremap <silent> <leader>c :set cursorcolumn!<CR>
+"nnoremap H :set cursorline!<CR>i
+
+
+" use \l to mark a line, and 'l to go back to it
+nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
+" use \m to unmark the line
+nnoremap <silent> <leader>m :match<CR>
+
+" \h to do a gibberish search to set the highlight go away (but not !hlsearch)
+nnoremap <silent> <leader>h /wretyovmejwrthlr<cr>
+
+
+"Ever notce a slight lag after typing the leader key + command? This lowers the timeout
+"set timeoutlen=500
+
+"make space give : (makes life easier)
+nmap <space> :
+
+" no indent when pasting
+" press \p before pasting
+nnoremap <leader>p :set invpaste paste?<CR>
+set pastetoggle=<leader>p
+set showmode
+
+" vim mouse
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
+" disable stupid bells
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
