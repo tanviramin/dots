@@ -43,12 +43,11 @@ set noerrorbells              " no bells in terminal
 set undolevels=1000           " number of undos stored
 set viminfo='50,"50           " '=marks for x files, "=registers for x files
 
-"
-" things you may be interested in for your .vimrc
-"
 " future colorscheme commands may clear all user-defined highlight groups.
 " Using the following command ensures that highlight group gets created.
+" highlight extra whitespace
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+" highlight ExtraWhitespace ctermbg=white
 
 " show a boundary on 80 character
 "doesnt work with vim 7.2
@@ -58,27 +57,12 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
 endif
 
-" show errors on tabs
-" this does not work on os x for some reason
-if !has("macunix")
-  match error '\t'
-endif
-
-" highlight extra whitespace
-" highlight ExtraWhitespace ctermbg=white
-
-" highlight literal tabs
-" (but don't highlight trailing whitespace; it's annoying as you type)
-" actually even tabs are annoying since they are in e.g. git commit msgs
-" could make it just for php but i'm not sure it's even needed
-"match Error '\t'
-
 " make split windows easier to navigate
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
-"map <C-h> <C-w>h
-"map <C-l> <C-w>l
-"map <C-m> <C-w>_
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+map <C-m> <C-w>_
 
 set nu
 syntax on
@@ -119,6 +103,11 @@ set cursorline
 hi CursorLine cterm=NONE term=NONE guibg=Grey40
 "hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
 
+" show errors on tabs
+" this does not work on os x for some reason
+if !has("macunix")
+  match error '\t'
+endif
 
 " use \u to show underline under current line
 nnoremap <silent> <leader>u :hi CursorLine cterm=underline term=underline<CR>
