@@ -38,5 +38,6 @@ then
 fi
 
 # gruvbox theme specific
-source ~/.dotfiles/vim/bundles/gruvbox/$gruvname
+# this script should run once per terminal start.
+# source ~/.dotfiles/vim/bundles/gruvbox/$gruvname
 

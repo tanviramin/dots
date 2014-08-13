@@ -16,6 +16,8 @@ alias tmux='TERM=xterm-256color tmux'
 alias tm='tmux attach'
 alias tms='tmux attach -t'
 alias tml='tmux list-sessions'
+alias gl='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette.sh'
+alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
 
 # os name
 osname=`uname`
