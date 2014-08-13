@@ -7,7 +7,7 @@ if [[ -z "$TMUX" ]]; then
        exec `TERM=xterm-256color tmux new`
        exit
      else
-       exec tmux attach
+       exec `TERM=xterm-256color tmux attach`
        exit
      fi
 fi
