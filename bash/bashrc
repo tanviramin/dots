@@ -38,6 +38,10 @@ then
 fi
 
 # gruvbox theme specific
-# this script should run once per terminal start.
-# source ~/.dotfiles/vim/bundles/gruvbox/$gruvname
+# this script is supposed to run per console start, not per ssh session.
+# the script for osx and linux are supposed to be different, however presently
+# the script for osx works on the both.
+# if the gruvbox colors are muted, execute "gm" (osx) or "gl" (linux) which are
+# aliased to gruvbox_256palette_osx.sh or gruvbox_256palette.sh, respectively.
+source ~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh
 
