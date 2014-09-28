@@ -12,12 +12,19 @@ alias flush="dscacheutil -flushcache" # Flush DNS cache
 alias c='clear'
 alias v='vim'
 alias h='cd ~'
+alias dots='cd ~/.dotfiles'
 alias tmux='TERM=xterm-256color tmux'
 alias tm='tmux attach'
 alias tms='tmux attach -t'
 alias tml='tmux list-sessions'
 alias gl='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette.sh'
 alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
+
+# Athena / Hadoop related
+alias eh='cd ~/Experimental/fa14'
+alias lh='eh && cd hadoop-experiment'
+alias hh='lh && cd hadoop-1.2.1-athena'
+alias hc='hh && cd conf'
 
 # os name
 osname=`uname`
