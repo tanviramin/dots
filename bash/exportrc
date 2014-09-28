@@ -1,0 +1,3 @@
+# Hadoop related
+export LOCAL_HOME="~/Experimental/fa14/hadoop-experiment"
+export HADOOP_PREFIX="$LOCAL_HOME/hadoop-1.2.1-athena"
