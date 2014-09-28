@@ -6,6 +6,12 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+#setup export variables
+if [ -f ~/.dotfiles/bash/exportrc ];
+then
+  source ~/.dotfiles/bash/exportrc
+fi
+
 #setup alias
 if [ -f ~/.dotfiles/bash/aliasrc ];
 then
