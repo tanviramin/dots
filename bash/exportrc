@@ -1,8 +1,8 @@
 # Hadoop related
 export LOCAL_HOME=~/Experimental/fa14/hadoop-experiment
 export HADOOP_PREFIX="$LOCAL_HOME/hadoop-1.2.1-athena"
-export SPARK_HOME="$LOCAL_HOME/spark-1.1.0-bin-hadoop1-athena"
+#export HADOOP_HOME="$HADOOP_PREFIX"
 export HADOOP_CONF_DIR="$HADOOP_PREFIX/conf"
-export JAVA_HOME="$LOCAL_HOME/jdk1.7.0_45"
-export HADOOP_JAVA_HOME="$JAVA_HOME"
+export HADOOP_JAVA_HOME="$LOCAL_HOME/jdk1.7.0_45"
+export SPARK_HOME="$LOCAL_HOME/spark-1.1.0-bin-hadoop1-athena"
 export PATH="$PATH:$HADOOP_PREFIX/bin"
