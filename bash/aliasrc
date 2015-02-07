@@ -23,8 +23,12 @@ alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
 # Athena / Hadoop related
 alias eh='cd ~/Experimental/fa14'
 alias lh='eh && cd hadoop-experiment'
-alias hh='lh && cd hadoop-1.2.1-athena'
+alias hh='lh && cd "$HADOOP_PREFIX"'
 alias hc='hh && cd conf'
+alias sh='lh && cd "$SPARK_HOME"'
+alias sc='sh && cd conf'
+alias th='lh && cd athena-analytics'
+alias ih='eh && cd socialtrove-streams'
 
 # os name
 osname=`uname`
