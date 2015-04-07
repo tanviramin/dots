@@ -27,6 +27,8 @@ alias hh='lh && cd "$HADOOP_PREFIX"'
 alias hc='hh && cd conf'
 alias sh='lh && cd "$SPARK_HOME"'
 alias sc='sh && cd conf'
+alias th='lh && cd athena-analytics'
+alias ih='eh && cd socialtrove-streams'
 
 # os name
 osname=`uname`
