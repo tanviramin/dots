@@ -20,6 +20,11 @@ alias tml='tmux list-sessions'
 alias gl='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette.sh'
 alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
 
+
+# json related
+alias jh='function jh_func(){ head -1 $1 | jq .;};jh_func'
+alias jt='function jt_func(){ tail -1 $1 | jq .;};jt_func'
+
 # Athena / Hadoop related
 alias eh='cd ~/Experimental/fa14'
 alias lh='eh && cd hadoop-experiment'
