@@ -24,6 +24,9 @@ alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
 # json related
 alias jh='function jh_func(){ head -1 $1 | jq .;};jh_func'
 alias jt='function jt_func(){ tail -1 $1 | jq .;};jt_func'
+alias plh='function ph_func(){ head -1 $1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};ph_func'
+alias pln='function pn_func(){ head -$2 $1 | tail -1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};pn_func'
+alias plt='function pt_func(){ tail -1 $1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};pt_func'
 
 # Athena / Hadoop related
 alias eh='cd ~/Experimental/fa14'
