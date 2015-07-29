@@ -20,6 +20,11 @@ alias tml='tmux list-sessions'
 alias gl='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette.sh'
 alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
 
+# cd into a directory given only a part of the name
+alias vd='function vd_func(){ cd `ls | grep $1 | head -1`;};vd_func'
+# quick browsing related
+# use like cat `a 1203` to open the first file that has 1203 in its name
+alias a='function a_func(){ find . -name "*$1*" | head -1;};a_func'
 
 # json related
 alias jh='function jh_func(){ head -1 $1 | jq .;};jh_func'
