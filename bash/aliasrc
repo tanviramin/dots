@@ -20,6 +20,19 @@ alias tml='tmux list-sessions'
 alias gl='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette.sh'
 alias gm='~/.dotfiles/vim/bundles/gruvbox/gruvbox_256palette_osx.sh'
 
+# cd into a directory given only a part of the name
+alias vd='function vd_func(){ cd `ls | grep $1 | head -1`;};vd_func'
+# quick browsing related
+# use like cat `a 1203` to open the first file that has 1203 in its name
+alias aa='function a_func(){ ls | grep $1 | head -1;};a_func'
+
+# json related
+alias jh='function jh_func(){ head -1 $1 | jq .;};jh_func'
+alias jt='function jt_func(){ tail -1 $1 | jq .;};jt_func'
+alias plh='function ph_func(){ head -1 $1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};ph_func'
+alias pln='function pn_func(){ head -$2 $1 | tail -1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};pn_func'
+alias plt='function pt_func(){ tail -1 $1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};pt_func'
+
 # Athena / Hadoop related
 alias eh='cd ~/Experimental/fa14'
 alias lh='eh && cd hadoop-experiment'

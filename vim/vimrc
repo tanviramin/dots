@@ -1,10 +1,4 @@
 
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-
 "
 " general
 "
@@ -37,6 +31,10 @@ filetype indent plugin on
 " again, most files will be covered by the previous line.
 set autoindent
 
+set softtabstop=2
+set tabstop=2 shiftwidth=2 expandtab
+
+
 set backspace=2
 
 " display
@@ -61,12 +59,12 @@ set viminfo='50,"50           " '=marks for x files, "=registers for x files
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 " highlight ExtraWhitespace ctermbg=white
 
-" show a boundary on 80 character
+" show a boundary on 100 character
 "doesnt work with vim 7.2
 if exists('+colorcolumn')
-    set colorcolumn=80
+    set colorcolumn=100
 else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%100v.\+', -1)
 endif
 
 " make split windows easier to navigate
