@@ -2,8 +2,20 @@
 "
 " general
 "
-
 set nocompatible
+
+"
+" vundle
+"
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
 
 set tags=tags;/
 
