@@ -33,6 +33,9 @@ alias plh='function ph_func(){ head -1 $1 | python -c "import ast, sys, pprint; 
 alias pln='function pn_func(){ head -$2 $1 | tail -1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};pn_func'
 alias plt='function pt_func(){ tail -1 $1 | python -c "import ast, sys, pprint; pprint.pprint(ast.literal_eval(sys.stdin.readline()))";};pt_func'
 
+# diffing
+alias wcdiff='function wcdiff_func(){ wdiff -n $1 $2 | colordiff | less -R;};wcdiff_func'
+
 # Athena / Hadoop related
 alias eh='cd ~/Experimental/fa14'
 alias lh='eh && cd hadoop-experiment'
