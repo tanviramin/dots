@@ -58,7 +58,7 @@ if [[ -n "$PS1" ]] ; then
     #add the time, date, user@host and full path
     HOSTNAME1=`hostname -f | cut -d '.' -f 1`
     HOSTNAME2=`hostname -f | cut -d '.' -f 2`
-    PS1="$PS1$MM\u$N@$Y${HOSTNAME1}$W.$C${HOSTNAME2} $MG\w $MC\$(date +%r) $MG\!"
+    PS1="$PS1$MM\u$N@$Y${HOSTNAME1}$W.$C${HOSTNAME2} $MG\w $MC\$(date +%T) $MG\!$K \$(date +%F)"
     #add the basename, the git branch the history number and the $ symbol
     PS1="$PS1\n$W\W$G\$(__git_ps1) $N\$ "
     export PS1
