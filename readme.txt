@@ -8,7 +8,8 @@ Installing:
 1. clone the repository inside ~/.dotfiles
 cd ~
 git clone git@github.com:tanviramin/dots.git .dotfiles
-
+(OR)
+git clone https://github.com/tanviramin/dots.git .dotfiles
 
 2. Set up bash
 Add the following lines in ~/.bashrc

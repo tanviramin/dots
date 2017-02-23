@@ -7,6 +7,7 @@ alias ...="cd .. ; cd .."
 # Get readable list of network IPs
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias lscan="sudo arp-scan -l"
 alias flush="dscacheutil -flushcache" # Flush DNS cache
 
 alias c='clear'
